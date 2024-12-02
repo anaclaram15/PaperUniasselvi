@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estiliza tela e sprites do jogo*/
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 30px solid #cfff83b7;
+    margin:  0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgb(117, 211, 230) , rgb(255, 249, 208));
+}
+
+.arbusto {
+    position: absolute;
+    bottom: -150px;
+    width: 258px;
+    right: -180px;
+    display: none;
+    animation: arbusto-animation 2s infinite linear;
+    animation-delay: 0.8s;
+}
+
+.tronco {
+    position: absolute;
+    bottom: -170px;
+    width: 258px;
+    right: -180px;
+    display: none;
+    animation: arbusto-animation 2s infinite linear;
+    animation-delay: 2s;
+}
+
+.p1 {
+    width: 200px;
+    position: absolute;
+    bottom: -90px;
+    display: none;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.nuvens {
+    position: absolute;
+    width: 600px;
+    animation: nuvens 20s infinite linear;
+    display: none;
+}
+
+/*Estiliza os botões e as telas de Start e Game Over*/
+.screen {
+    width: 100%;
+    height: 70dvh;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   top: 0;
+   left: 0;
+}
+
+.titulo {
+    width: 400px;
+}
+
+.botao-play {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: #faf5be;
+    display: block;
+    margin: 10px auto 0;
+    font-size: 2rem;
+    color: rgb(254, 225, 34);
+    cursor: pointer;
+}
+
+.botao-play:hover  {
+background-color: #feffe5;
+}
+
+.pontos-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 100%;
+    text-align:left;
+    padding: 40px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: none;
+}
+
+/*Animações de sprites*/
+@keyframes arbusto-animation {
+    from {
+        right: -80;
+    }
+    to {
+        right: 100%;
+    }
+
+}
+
+@keyframes jump {
+    0% {
+        bottom: -90;
+    }
+    40% {
+        bottom: 50px;
+    }
+
+    50% {
+        bottom:70px;
+    }
+
+    60%{
+        bottom: 60px;
+    }
+
+    100% {
+        bottom: -90;
+    }
+
+}
+
+@keyframes nuvens {
+    from{
+        right: -700px ;
+}
+to{
+    right: 100%;
+}
+} 
